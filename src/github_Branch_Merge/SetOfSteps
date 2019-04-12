@@ -1,0 +1,39 @@
+
+BRANCHING & MERGING
+These commands give you the freedom to work solely, isolating work in branches, changing context and then integrating changes. 
+This part is very important for our production so please master it.
+
+Until now we have been working on the master branch and is by default where all commit go.
+
+One might ask why are multiples branches needed?
+Multiples branches are needed or created to support parallel development.
+We can branches from the master branch and work on the side until we are ready to commit those changes
+
+HOW TO START
+
+>>git branch 
+Using this command present us with a list of you branch and will show next to the currently active branch.
+As right now we are on the master branch.
+>>git branch [branch name]
+Using this command create a branch for us to work on. 
+For our exercise we can create a branch called firstBranch this way: git branch firstBranch.
+Remeber this just create a branch for us meaning we still on the master branch in order to switch to the created branch we used the command below
+>>git checkout firstBranch 
+Now we are on the firstBranch and it points to the head to be sure we can always type git status.
+Then when we modify the demo.txt by adding some text inside when ready you can now stage and commit using these commands:
+>>git add demo.txt
+which add the demo.txt to the branch you are on “firstBranch”
+>>git commit –m “First Branch Commit”
+Which commit the text you added into the demo.txt, you can use git log to show the history of your commit.
+>>git push 
+Useful command, using this command transmit local branch commits to the remote repository branch.
+MERGING
+When we know our work is ready to be shared and review by our peers.
+Currently we are working on the firstBranch which is ahead of the master by 1 commit, 
+now we want to merge our work to be added to the master branch we can used this useful command git merge.
+In Order to merge our work from the firstBranchin the master branch, we do these steps:
+We first navigate back to the master branch using git checkout master,
+And git branch to make sure we are on the master branch because
+we could have many branches then we run this command git merge firstBranch.
+After running this 3 commands,the merge should be successful.
+Somethimes, when working in a team you may ran into conflict it is a best idea to consult the git help, you can can further informations or ask a help from your team mates.
